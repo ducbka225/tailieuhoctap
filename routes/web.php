@@ -31,3 +31,14 @@ Route::get('log-out',[
 ]);
 
 Route::get('details/{id}', 'PageController@getDetails');
+
+// thông tin cá nhân
+
+Route::get('student/info', 'PageController@getStudentInfo')->middleware('auth');
+
+Route::get('student/updateinfo', 'PageController@getUpdateInfo')->middleware('auth');
+
+Route::post('student/updateinfo', 'PageController@postUpdateInfo')->middleware('auth');
+
+Route::get('changepassword', 'PageController@getChangePassword')->middleware('auth');
+Route::post('changepassword', 'PageController@postChangePassword');

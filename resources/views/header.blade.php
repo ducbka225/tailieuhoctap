@@ -23,8 +23,14 @@
 
                             <div class="header-bar-menu">
                                 <ul class="flex justify-content-center align-items-center py-2 pt-md-0">
+                                    @if(Auth::check())
+                                    <li>Chào bạn: {{Auth::user()->name}}</li>
+                                    <li>|</li>
+                                    <li><a href="{{route('logout')}}">Đăng xuất</a></li>
+                                    @else  
                                     <li><a href="signup">Register</a></li>
                                     <li><a href="login">Login</a></li>
+                                     @endif
                                 </ul>
                             </div><!-- .header-bar-menu -->
                         </div><!-- .col -->
@@ -44,11 +50,12 @@
                         <div class="col-3 col-lg-9 flex justify-content-end align-content-center">
                             <nav class="site-navigation flex justify-content-end align-items-center">
                                 <ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
-                                    <li><a href="trangchu">Trang Chủ</a></li>
+                                    <li><a href="trangchu">Home</a></li>
                                     <li><a href="#">About</a></li>
                                     <li><a href="#">Courses</a></li>
-                                    <li><a href="#">blog</a></li>
+                                    <li><a href="student/info">Infor</a></li>
                                     <li><a href="#">Contact</a></li>
+                                    <li><a href="#"></a></li>
                                 </ul>
 
                                 <div class="hamburger-menu d-lg-none">
