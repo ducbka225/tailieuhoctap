@@ -42,3 +42,9 @@ Route::post('student/updateinfo', 'PageController@postUpdateInfo')->middleware('
 
 Route::get('changepassword', 'PageController@getChangePassword')->middleware('auth');
 Route::post('changepassword', 'PageController@postChangePassword');
+
+//test
+Route::get('mid-test/{course_id}', 'TestController@getMidTest')->middleware('auth');
+Route::post('/post-mid-test', 'TestController@postMidTest');
+
+Route::get('mid-test-result/{course_id}', 'TestController@getMidTestResult')->name('mid-test-result')->middleware('auth');
